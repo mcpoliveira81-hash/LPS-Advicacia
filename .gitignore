@@ -1,0 +1,15 @@
+# Sistema / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs e caches
+*.log
+.cache/
+
+# Dependências (caso use um servidor local via npm)
+node_modules/
+
+# Ambiente
+.env
+.env.local

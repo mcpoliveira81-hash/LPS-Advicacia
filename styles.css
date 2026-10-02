@@ -322,18 +322,45 @@ section{scroll-margin-top:var(--header-h);}
   border-left:1px solid var(--gold);
   pointer-events:none;
 }
+.hero__shot{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  background:var(--navy);
+  border:1px solid rgba(199,163,90,.55);
+  box-shadow:0 30px 70px rgba(0,0,0,.38);
+}
+/* tom azul-marinho suave */
+.hero__shot::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(155deg, rgba(7,26,51,.24), rgba(7,26,51,0) 55%, rgba(18,63,130,.20));
+}
+/* grão fino para disfarçar os artefatos do JPEG */
+.hero__shot::after{
+  content:"";
+  position:absolute;
+  inset:-25%;
+  z-index:2;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='200'%20height='200'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='4'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='200'%20height='200'%20filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:190px 190px;
+  opacity:.12;
+  mix-blend-mode:overlay;
+}
 .hero__figure img{
   width:100%;
   display:block;
   aspect-ratio:1/1;
   object-fit:cover;
   object-position:50% 40%;
-  border:1px solid rgba(199,163,90,.55);
-  filter:saturate(.95) contrast(1.04);
-  box-shadow:0 30px 70px rgba(0,0,0,.38);
+  filter:saturate(.70) contrast(1.06) brightness(.98);
   transition:transform .9s var(--ease);
 }
-.hero__figure:hover img{transform:scale(1.02);}
+.hero__figure:hover img{transform:scale(1.03);}
 .hero__figure figcaption{
   display:flex;
   align-items:center;
